@@ -1,0 +1,12 @@
+# Merge files
+*.orig
+
+# NPM debugging log files.
+npm-debug.log
+
+# JetBrains editor files.
+/**/.idea
+
+## Build results
+/**/.tmp
+/**/dist
