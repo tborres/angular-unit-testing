@@ -1,18 +1,22 @@
 'use strict';
 window.jQuery = require('jquery');
-
-require('jquery');
-
 var angular = require('angular');
 require('angular-ui-router');
 require('bootstrap-sass');
 
-var VmFunctionController = require('./vm-function/vm-function.controller');
+var PagesModule = require('./pages/index');
+var ServicesModule = require('./services/index');
 
 var requires = [
   'ui.router',
+  PagesModule.name,
+  ServicesModule.name,
 ];
 
+if (window.self === window.top) {
+  var runtimeMocks = require('./runtime.mocks');
+  requires.push(runtimeMocks.name);
+}
+
 angular.module('b2io.angular-unit-testing', requires)
-  .controller('VmFunctionController', VmFunctionController)
-  .config(require('./state-provider.config.js'));
+  .config(require('./app.routes.js'));
