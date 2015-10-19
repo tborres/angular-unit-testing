@@ -2,11 +2,10 @@ module.exports = function KarmaConfig(config) {
   var configuration = {
     frameworks: ['browserify', 'jasmine'],
     files: [
-      'test/**/*.spec.js',
+      'src/**/*.spec.js',
     ],
     preprocessors: {
-      'app/**/*.js': ['browserify'],
-      'test/**/*.spec.js': ['browserify'],
+      'src/**/*.js': ['browserify'],
     },
     browsers: ['PhantomJS'],
     singleRun: true,

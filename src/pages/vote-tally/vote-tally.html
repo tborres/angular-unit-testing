@@ -1,0 +1,16 @@
+<div class="page-vote-tally">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td>Language</td>
+        <td>Submitters</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="vote in vm.votes">
+        <td>{{vote.voteItem}} - {{vote.count}}</td>
+        <td>{{vote.voters}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -51,6 +51,7 @@
     "karma-chrome-launcher": "^0.2.1",
     "karma-jasmine": "^0.3.6",
     "karma-phantomjs-launcher": "^0.2.1",
+    "lodash": "^3.10.1",
     "partialify": "^3.1.5",
     "phantomjs": "^1.9.18",
     "run-sequence": "^1.1.4",
