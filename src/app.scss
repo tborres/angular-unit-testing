@@ -1,4 +1,5 @@
 @import '../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+@import './components/label-count/label-count';
 @import './pages/vote/vote';
 
 .main-content {
@@ -7,4 +8,8 @@
 
 thead td {
   font-weight: bold;
+}
+
+.modal-header {
+  font-size: 18px;
 }

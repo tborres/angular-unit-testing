@@ -22,7 +22,7 @@ describe('LanguageVotesService', function() {
     errorHandler = jasmine.createSpy('errorHandler');
   }));
 
-  it('should work', function() {
+  it('should exist', function() {
     expect(service).toBeDefined();
   });
 

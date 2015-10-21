@@ -1,0 +1,20 @@
+.label-count {
+  display: flex;
+  border: 1px solid #ccc;
+  background: #eee;
+  padding: 5px 10px;
+
+  &__label {
+    flex-grow: 1;
+    line-height: 24px;
+    margin-right: 10px;
+  }
+
+  &__count {
+    line-height: 24px;
+  }
+
+  &__add {
+    margin-left: 20px;;
+  }
+}
