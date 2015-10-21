@@ -21,7 +21,7 @@ module.exports = angular.module('b2io.angular-unit-testing.runtime-mocks', ['ngM
       var json = JSON.parse(data);
       var vote = new LanguageVote(json.language, new Person(json.lastName, json.firstName));
       votes.push(vote);
-      return vote;
+      return [200, vote];
     });
 
     // For everything else, don't mock
