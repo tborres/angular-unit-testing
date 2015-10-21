@@ -9,7 +9,7 @@
     <tbody>
       <tr ng-repeat="vote in vm.votes">
         <td>{{vote.voteItem}} - {{vote.count}}</td>
-        <td>{{vote.voters}}</td>
+        <td>{{vote.voters | seriesList}}</td>
       </tr>
     </tbody>
   </table>

@@ -9,11 +9,15 @@ var Person = require('./models/Person/Person');
 module.exports = angular.module('b2io.angular-unit-testing.runtime-mocks', ['ngMockE2E'])
   .run(function($httpBackend) {
     var votes = [
-      new LanguageVote('C', new Person('Miller', 'Dade')),
-      new LanguageVote('Perl', new Person('Jolie', 'Kate')),
-      new LanguageVote('Perl', new Person('Lillard', 'Cereal')),
-      new LanguageVote('javascript', new Person('Bradford', 'Joey')),
-      new LanguageVote('javascript', new Person('Mason', 'Nikon')),
+      new LanguageVote('Pascal', new Person('Turing', 'Alan')),
+      new LanguageVote('Assembly', new Person('Knuth', 'Donald')),
+      new LanguageVote('COBOL', new Person('Hopper', 'Grace')),
+      new LanguageVote('Pascal', new Person('Lovelace', 'Ada')),
+      new LanguageVote('C', new Person('von Neumann', 'John')),
+      new LanguageVote('ALGOL', new Person('Dijkstra', 'Edsger')),
+      new LanguageVote('javascript', new Person('Eich', 'Brendan')),
+      new LanguageVote('javascript', new Person('Hevery', 'Misko')),
+      new LanguageVote('javascript', new Person('Young', 'Alex')),
     ];
 
     $httpBackend.whenGET('/languagevotes').respond(200, votes);
