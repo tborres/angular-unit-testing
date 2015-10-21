@@ -4,11 +4,13 @@ var angular = require('angular');
 require('angular-ui-router');
 require('bootstrap-sass');
 
+var FiltersModule = require('./filters/index');
 var PagesModule = require('./pages/index');
 var ServicesModule = require('./services/index');
 
 var requires = [
   'ui.router',
+  FiltersModule.name,
   PagesModule.name,
   ServicesModule.name,
 ];
