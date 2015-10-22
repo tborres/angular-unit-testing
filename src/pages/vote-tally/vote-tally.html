@@ -8,7 +8,9 @@
     </thead>
     <tbody>
       <tr ng-repeat="vote in vm.votes">
-        <td>{{vote.voteItem}} - {{vote.count}}</td>
+        <td>
+          <label-count label="vote.voteItem" count="vote.count" on-add-vote="vm.addVote(vote)"></label-count>
+        </td>
         <td>{{vote.voters | seriesList}}</td>
       </tr>
     </tbody>
