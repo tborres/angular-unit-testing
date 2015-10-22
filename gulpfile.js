@@ -133,7 +133,7 @@ gulp.task('styles', function() {
 
 gulp.task('test', function(cb) {
   new Karma({
-    configFile: path.join(__dirname, 'Karma.conf.js'),
+    configFile: path.join(__dirname, 'karma.conf.js'),
     singleRun: true,
     autoWatch: false,
     reporters: ['dots'],
@@ -142,7 +142,7 @@ gulp.task('test', function(cb) {
 
 gulp.task('test:tdd', function(cb) {
   new Karma({
-    configFile: path.join(__dirname, 'Karma.conf.js'),
+    configFile: path.join(__dirname, 'karma.conf.js'),
     singleRun: false,
     autoWatch: true,
     reporters: ['dots'],
