@@ -19,21 +19,10 @@ function OnConfig($stateProvider, $urlRouterProvider) {
       controller: 'VoteTallyController as vm',
       templateUrl: '/pages/vote-tally/vote-tally.html',
       resolve: {
-        votes: function(LanguageVotesService) {
+        votes: function(LanguageVotesService, VoteTallyTransformerService) {
           return LanguageVotesService.all()
             .then(function(votes) {
-              return _.chain(votes)
-                .groupBy(function(vote) {
-                  return vote.language;
-                })
-                .map(function(voteGroup, language) {
-                  var voters = _.map(voteGroup, function(vote) {
-                    return vote.voter.displayName();
-                  });
-
-                  return new VoteTally(language, voteGroup.length, voters);
-                })
-                .value();
+              return VoteTallyTransformerService.fromLanguageVotes(votes);
             });
         },
       },
