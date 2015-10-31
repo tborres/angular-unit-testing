@@ -1,12 +1,12 @@
 'use strict';
 
-require('filters/index');
+var FiltersModule = require('filters/index');
 require('angular-mocks');
 
 describe('seriesListFilter', function() {
   var seriesListFilter;
 
-  beforeEach(angular.mock.module('b2io.angular-unit-testing.filters'));
+  beforeEach(angular.mock.module(FiltersModule.name));
 
   beforeEach(inject(function($filter) {
     seriesListFilter = $filter('seriesList');

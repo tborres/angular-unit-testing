@@ -1,6 +1,6 @@
 'use strict';
 
-require('services/index');
+var ServicesModule = require('services/index');
 require('angular-mocks');
 
 describe('LanguageVotesService', function() {
@@ -11,7 +11,7 @@ describe('LanguageVotesService', function() {
   var successHandler;
   var errorHandler;
 
-  beforeEach(angular.mock.module('b2io.angular-unit-testing.services'));
+  beforeEach(angular.mock.module(ServicesModule.name));
 
   beforeEach(inject(function(_$httpBackend_, _$q_, LanguageVotesService) {
     $httpBackend = _$httpBackend_;
