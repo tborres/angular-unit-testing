@@ -1,8 +1,5 @@
 'use strict';
 
-/**
- * @ngInject;
- */
 function seriesListFilter() {
   return function(input) {
     if (!input || !input.length) {

@@ -9,7 +9,7 @@ function VoteTallyController(votes, $state, VoteModalService) {
   var vm = this;
 
   function addVote(language) {
-    VoteModalService.show(language).then(function(){
+    VoteModalService.show(language).then(function() {
       $state.reload();
     });
   }

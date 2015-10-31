@@ -1,8 +1,5 @@
 'use strict';
 
-var _ = require('lodash');
-var VoteTally = require('./models/VoteTally/VoteTally');
-
 /**
  * @ngInject
  */

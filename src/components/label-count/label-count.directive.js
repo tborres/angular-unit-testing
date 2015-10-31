@@ -13,7 +13,7 @@ function labelCount() {
     bindToController: {
       count: '=',
       label: '=',
-      onAddVote: '&'
+      onAddVote: '&',
     },
     controllerAs: 'vm',
 
