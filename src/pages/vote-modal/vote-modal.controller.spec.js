@@ -1,6 +1,6 @@
 'use strict';
 
-require('app');
+var PagesModule = require('pages/index');
 require('angular-mocks');
 
 var _ = require('lodash');
@@ -15,7 +15,7 @@ describe('VoteModalController', function() {
   var $rootScope;
   var LanguageVotesService;
 
-  beforeEach(angular.mock.module('b2io.angular-unit-testing'));
+  beforeEach(angular.mock.module(PagesModule.name));
 
   function _setup(options) {
     var config = _.defaults(options || {}, {

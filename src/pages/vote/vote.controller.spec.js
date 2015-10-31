@@ -1,6 +1,6 @@
 'use strict';
 
-require('app');
+var PagesModule = require('pages/index');
 require('angular-mocks');
 
 var LanguageVote = require('./../../models/LanguageVote/LanguageVote');
@@ -13,7 +13,7 @@ describe('VoteController', function() {
   var $scope;
   var LanguageVotesService;
 
-  beforeEach(angular.mock.module('b2io.angular-unit-testing'));
+  beforeEach(angular.mock.module(PagesModule.name));
 
   beforeEach(inject(function(_$q_, $rootScope, _LanguageVotesService_) {
     $q = _$q_;

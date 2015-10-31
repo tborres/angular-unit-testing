@@ -16,11 +16,19 @@ describe('seriesListFilter', function() {
     expect(seriesListFilter(['a'])).toEqual('a');
   });
 
-  it('should display and between to values', function() {
+  it('should display `and` between to values', function() {
     expect(seriesListFilter(['a', 'b'])).toEqual('a and b');
   });
 
-  it('should series separate series with oxford series', function() {
+  it('should separate series with oxford comma', function() {
     expect(seriesListFilter(['a', 'b', 'c'])).toEqual('a, b, and c');
+  });
+
+  it('should be empty on empty value', function() {
+    expect(seriesListFilter([])).toEqual('');
+  });
+
+  it('should be empty on undefined value', function() {
+    expect(seriesListFilter()).toEqual('');
   });
 });
