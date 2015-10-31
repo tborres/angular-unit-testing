@@ -1,6 +1,8 @@
 AngularJS Unit Testing
 ============
 
+![circleci](https://circleci.com/gh/tborres/angular-unit-testing.svg?style=shield&circle-token=:circle-token)
+
 # Setup
 
 #### Prerequisites
