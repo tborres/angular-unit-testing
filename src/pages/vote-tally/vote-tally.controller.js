@@ -5,7 +5,7 @@ require('./../../models/VoteTally/VoteTally');
 /**
  * @ngInject
  */
-function VoteTallyController(votes, $state, VoteModalService) {
+function VoteTallyController($state, VoteModalService, votes) {
   var vm = this;
 
   function addVote(language) {

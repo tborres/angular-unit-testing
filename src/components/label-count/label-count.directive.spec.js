@@ -1,8 +1,8 @@
 'use strict';
 
-var _ = require('lodash');
 var ComponentsModule = require('components/index');
 require('angular-mocks');
+var _ = require('lodash');
 
 describe('labelCountDirective', function() {
   beforeEach(angular.mock.module(ComponentsModule.name));
@@ -19,6 +19,10 @@ describe('labelCountDirective', function() {
     });
 
     inject(function($compile, $rootScope) {
+      if (element){
+        element.remove();
+      }
+
       parentScope = $rootScope.$new();
       parentScope.vm = config.vm;
 

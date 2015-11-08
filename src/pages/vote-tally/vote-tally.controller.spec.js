@@ -1,6 +1,6 @@
 'use strict';
 
-require('app');
+var PagesModule = require('pages/index');
 require('angular-mocks');
 
 var _ = require('lodash');
@@ -16,7 +16,7 @@ describe('VoteTallyController', function() {
   var $state;
   var VoteModalService;
 
-  beforeEach(angular.mock.module('b2io.angular-unit-testing'));
+  beforeEach(angular.mock.module(PagesModule.name));
 
   function _setup(options) {
     votes = [new VoteTally('Ada', 2, [new Person('Lovelace', 'Ada'), new Person('Babbage', 'Charles')])];
