@@ -21,11 +21,11 @@ describe('VoteTallyController', function() {
   function _setup(options) {
     votes = [new VoteTally('Ada', 2, [new Person('Lovelace', 'Ada'), new Person('Babbage', 'Charles')])];
 
-    var params = _.defaults(options || {}, {
+    var params = _.extend({
       votes: votes,
-    });
+    }, options);
 
-    inject(function($controller, _VoteModalService_, _$q_, _$rootScope_) {
+    inject(function($controller, _$q_, _$rootScope_, _VoteModalService_) {
       $q = _$q_;
       $rootScope = _$rootScope_;
       $state = {reload: jasmine.createSpy('$state.reload')};

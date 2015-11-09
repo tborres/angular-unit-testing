@@ -18,9 +18,9 @@ describe('VoteModalController', function() {
   beforeEach(angular.mock.module(PagesModule.name));
 
   function _setup(options) {
-    var config = _.defaults(options || {}, {
+    var config = _.extend({
       vote: 'Sql',
-    });
+    }, options);
 
     inject(function($controller, _$q_, _$rootScope_, _LanguageVotesService_) {
       $modalInstance = {close: jasmine.createSpy('$modalInstance.close')};
