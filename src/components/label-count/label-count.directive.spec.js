@@ -10,16 +10,23 @@ describe('labelCountDirective', function() {
   var element;
   var parentScope;
   var vm;
+  var addVoteCallback;
 
   // Helpers:
   function _setup(options) {
-    var config = _.defaults(options, {
+    addVoteCallback = jasmine.createSpy('onAddVote');
+
+    var config = _.extend({
       template: '<label-count label="vm.label" count="vm.count" on-add-vote="vm.onAddVote(vote)"></label-count>',
-      vm: {},
-    });
+      vm: {
+        label: 'Sql',
+        count: 2,
+        onAddVote: addVoteCallback,
+      },
+    }, options);
 
     inject(function($compile, $rootScope) {
-      if (element){
+      if (element) {
         element.remove();
       }
 
@@ -46,19 +53,9 @@ describe('labelCountDirective', function() {
 
   afterEach(_tearDown);
 
-  describe('vm bindings', function() {
-    var addVoteCallback;
-
+  describe('when parameters', function() {
     beforeEach(function() {
-      addVoteCallback = jasmine.createSpy('onAddVote');
-
-      _setup({
-        vm: {
-          label: 'Sql',
-          count: 2,
-          onAddVote: addVoteCallback,
-        },
-      });
+      _setup();
     });
 
     describe('vm', function() {
@@ -86,4 +83,24 @@ describe('labelCountDirective', function() {
       });
     });
   });
+
+  describe('when no parameters', function() {
+    beforeEach(function() {
+      _setup({
+        template: '<label-count></label-count>',
+        vm: {},
+      });
+    });
+
+    describe('vm', function() {
+      it('should set vm.label', function() {
+        expect(vm.label).not.toBeDefined();
+      });
+
+      it('should set vm.count', function() {
+        expect(vm.count).not.toBeDefined();
+      });
+    });
+  });
+
 });
