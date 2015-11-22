@@ -6,16 +6,14 @@ require('angular-mocks');
 describe('LanguageVotesService', function() {
   var service;
   var $httpBackend;
-  var $q;
 
   var successHandler;
   var errorHandler;
 
   beforeEach(angular.mock.module(ServicesModule.name));
 
-  beforeEach(inject(function(_$httpBackend_, _$q_, LanguageVotesService) {
+  beforeEach(inject(function(_$httpBackend_, LanguageVotesService) {
     $httpBackend = _$httpBackend_;
-    $q = _$q_;
     service = LanguageVotesService;
 
     successHandler = jasmine.createSpy('successHandler');
@@ -42,7 +40,7 @@ describe('LanguageVotesService', function() {
       beforeEach(function() {
         response = {server: 'response'};
 
-        $httpBackend.whenPUT('/languagevotes').respond($q.when(response));
+        $httpBackend.whenPUT('/languagevotes').respond(200, response);
         service.add('javascript', 'Brendan', 'Eich').then(successHandler, errorHandler);
         $httpBackend.flush();
       });
@@ -60,7 +58,7 @@ describe('LanguageVotesService', function() {
       beforeEach(function() {
         response = {error: 'error message'};
 
-        $httpBackend.whenPUT('/languagevotes').respond($q.reject(response));
+        $httpBackend.whenPUT('/languagevotes').respond(500, response);
         service.add('javascript', 'Brendan', 'Eich').then(successHandler, errorHandler);
         $httpBackend.flush();
       });
@@ -78,7 +76,7 @@ describe('LanguageVotesService', function() {
       beforeEach(function() {
         response = {server: 'response'};
 
-        $httpBackend.whenGET('/languagevotes').respond($q.when(response));
+        $httpBackend.whenGET('/languagevotes').respond(200, response);
         service.all().then(successHandler, errorHandler);
         $httpBackend.flush();
       });
@@ -96,7 +94,7 @@ describe('LanguageVotesService', function() {
       beforeEach(function() {
         response = {error: 'error message'};
 
-        $httpBackend.whenGET('/languagevotes').respond($q.reject(response));
+        $httpBackend.whenGET('/languagevotes').respond(500, response);
         service.all().then(successHandler, errorHandler);
         $httpBackend.flush();
       });
